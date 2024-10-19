@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card mt-5 bg-success " >
+<div class="card-body bg-warning">
+<form th:action="@{/send-otp}"  th:object="${forget}">
+<div class="form-group" >
+<label for="email"></label>
+<input type="hidden" id="email" name="email" class="form-control" th:value="${email}" required>
+</div>
+
+<button class="btn btn-info" Style="margin-left:44%">send-otp</button>
+<h1 class="text-center">click send otp </h1>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <style>
+        .header {
+            background-color: #00003f;
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+        }
+        .regborder {
+            border: 1px solid white;
+            box-shadow: inset 0 0 15px 5px rgba(255, 165, 0, 0.3);
+            padding: 3px;
+            background-color: rgba(255, 102, 0, 0.6);
+            font-weight: 600;
+            border-radius: 10%;
+        }
+        .display {
+            background-image: url("/img/snowpark-skis-headerbg2.jpg"); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 550px; 
+            width: 100%; 
+        }
+        .scope {
+            margin-top: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        } 
+        .btn-danger {
+            background-color: rgba(255, 69, 69, 0.8); /* Semi-transparent red */
+            color: white;
+        }
+        a:hover{
+            background-color:rgba(201, 189, 189, 0.1);
+        }
+    </style>
+</head>
+<body class="display">
+    <div>
+    <header class="header p-3 d-flex justify-content-between align-items-center">
+        <div class="d-flex">
+            <a href="#" class="text-white me-3">Home</a>
+            <a href="#" class="text-white me-3">Courses</a>
+            <a href="#" class="text-white me-3">Contact</a>
+        </div>
+        <div class="text-center">
+            <a id="logo" href="#" title="SCOPE INDIA - Software and Networking Professional Education Center">
+                <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="Scope India Logo" width="40">
+            </a>
+        </div>
+        <div class="d-flex">
+            <a href="#" class="text-white me-3 regborder">Register Now</a>
+            <a href="#" class="text-white me-3">Dashboard</a>
+            <a href="#" class="text-white me-3">Login</a>
+            <a href="#" class="text-white">Logout</a>
+        </div>
+    </header>
+    
+    <div class="d-flex flex-column justify-content-center align-items-center text-center mt-5 scope">
+        <div class="h1 text-white">Scope India</div>
+        <div class="h3 text-warning">Software Programming Courses</div>
+    </div>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mx-2 text-warning" style="background-color:rgb(255, 255, 255,0.1);">
+                    <div class="card-body">
+                        <h1 class="card-title">JAVA</h1>
+                        <p class="card-text">JAVA FULLSTACK INTERNSHIP</p>
+                        <a th:href="@{/course/{id}(id=${1})}" class="btn btn-danger">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mx-2 text-warning" style="background-color:rgb(255, 255, 255,0.1);">
+                    <div class="card-body">
+                        <h1 class="card-title">PYTHON</h1>
+                        <p class="card-text">PYTHON FULL-STACK INTERNSHIP</p>
+                        <a th:href="@{/course/{id}(id=${2})}" class="btn btn-danger">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mx-2 text-warning" style="background-color:rgb(255, 255, 255,0.1);">
+                    <div class="card-body">
+                        <h1 class="card-title">PHP</h1>
+                        <p class="card-text">PHP FULL-STACK INTERNSHIP</p>
+                        <a th:href="@{/course/{id}(id=${3})}" class="btn btn-danger">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card mx-2 text-warning" style="background-color:rgb(255, 255, 255,0.1);">
+                    <div class="card-body">
+                        <h1 class="card-title">.NET</h1>
+                        <p class="card-text">.NET FULL-STACK INTERNSHIP</p>
+                        <a th:href="@{/course/{id}(id=${4})}" class="btn btn-danger">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mx-2 text-warning" style="background-color:rgb(255, 255, 255,0.1);">
+                    <div class="card-body">
+                        <h1 class="card-title">MERN</h1>
+                        <p class="card-text">MERN FULL-STACK INTERNSHIP</p>
+                        <a th:href="@{/course/{id}(id=${5})}" class="btn btn-danger">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mx-2 text-warning" style="background-color:rgb(255, 255, 255,0.1);">
+                    <div class="card-body">
+                        <h1 class="card-title">MEAN</h1>
+                        <p class="card-text">MEAN FULL-STACK INTERNSHIP</p>
+                        <a th:href="@{/course/{id}(id=${6})}" class="btn btn-danger">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-5">
+     
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <style>
+         body {
+            background-image: url("/img/snowpark-skis-headerbg2.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .login-card {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            text-align: center;
+        }
+        h3 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 30px;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 50px;
+            font-size: 16px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+            
+        }
+        button {
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+        }
+        .in {
+        	display:inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+    <h1 class="text-warning">Scope India</h1>
+        <h3 class="text-danger">Student Login</h3>
+        <form th:object="${login}" th:action="@{/login}">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="password" id="password" name="enterPassword" placeholder="Enter your password" required>
+            <label class="in text-white"><b>keep me as login</b></label>
+            <input type="checkbox" id="KeepLoggedIn" name="KeepLoggedIn"  value="true" class="in">            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

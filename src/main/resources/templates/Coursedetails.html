@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url("/img/snowpark-skis-headerbg2.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        h1 {
+            color: orange;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        th,
+        td {
+            border: none;
+            color: orange;
+        }
+
+        th {
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        td {
+            font-size: 1rem;
+        }
+
+        .btn-danger {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        a.btn-danger:hover {
+            background-color: #ff4500;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h1>COURSE DETAILS</h1>
+            <table class="table table-borderless">
+                <tr>
+                    <th>Course Name:</th>
+                    <td th:text="${details.coursename}">Introduction to Skiing</td>
+                </tr>
+                <tr>
+                    <th>Course Content:</th>
+                    <td th:text="${details.coursedetails}">Beginner skiing techniques and safety protocols</td>
+                </tr>
+                <tr>
+                    <th>Course Duration:</th>
+                    <td th:text="${details.courseduration}">5 weeks</td>
+                </tr>
+                <tr>
+                    <th>Course Fee:</th>
+                    <td th:text="${details.coursefee}">$500</td>
+                </tr>
+            </table>
+
+            
+        </div>
+    </div>
+		<a th:href="@{/joinnow/{id}(id=${details.id})}" class="btn btn-danger"><b>Join Now!!!</b></a>
+</body>
+
+</html>

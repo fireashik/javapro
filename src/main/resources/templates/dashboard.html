@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        .header {
+            background-color: #00003f;
+            height: 70px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .regborder {
+            border: 1px solid white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .dashboard-container {
+            display: flex;
+            gap: 30px; /* Space between cards and table */
+        }
+        .card-body {
+                 background-color: #00003f; 
+                color: white; 
+                border-radius: 50px; 
+                text-align: center;
+            }
+            .card{
+                background-color:red;
+            }
+            th{
+                background-color:red ;
+            }
+
+    </style>
+</head>
+<body style="background-color:wheat;">
+    <header class="header d-flex align-items-center">
+        <div class="container-fluid d-flex align-items-center justify-content-between gap-3">
+            <div class="d-flex align-items-center gap-5">
+                <a href="#" class="text-white">Home</a>
+                <a href="#" class="text-white">Courses</a>
+                <a href="#" class="text-white">Contact</a>
+            </div>
+            <a id="logo" href="#" title="SCOPE INDIA - Software and Networking Professional Education Center">
+                <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" width="40">
+            </a>
+            <div class="d-flex align-items-center gap-4">
+                <a href="#" class="text-white regborder">Register Now</a>
+                <a href="#" class="text-white">Dashboard</a>
+                <a href="#" class="text-white">Login</a>
+                <a href="#" class="text-white">Logout</a>
+            </div>
+        </div>
+    </header>
+    <div class="h1 text-center bg-danger text-dark">Student Dashboard</div>
+    <div class="container mt-4 dashboard-container">
+        <div class="d-flex flex-column dashboard-cards">
+            <div class="card mb-4">
+                <div class="card-body"><a class="h3" th:href="@{/course}">Courses Search</a></div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body"><a class="h3" th:href="@{/editprofile}">Profile Edit</a></div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body"><a class="h3" th:href="@{/showpasswordchange}">Change Password</a></div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body"><a class="h3" th:href="@{/logout}">Logout</a></div>
+            </div>
+        </div>
+        <div class="table-container d-flex " >
+            <table class="table" style="width: 700px;" bo>
+                <tr th:each="student :${students}">
+                    <th >First Name:</th>
+                    <td th:text="${student.firstname}"></td>
+                </tr>
+                <tr th:each="student:${students}">
+                    <th>Last Name:</th>
+                   <td th:text="${student.lastname}"></td>
+                </tr>
+                <tr th:each="student :${students}">
+                    <th>Dob:</th>
+                    <td th:text="${student.dob}"></td>
+                </tr>
+                <tr th:each="student :${students}">
+                    <th>Email:</th>
+                    <td th:text="${student.email}"></td>
+                </tr>
+                <tr th:each="student :${students}">
+                    <th>Phone:</th>
+                    <td th:text="${student.phone}"></td>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <th>Country:</th>
+                    <td th:text="${student.country}"></td>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <th>State:</th>
+                    <td th:text="${student.state}"></td>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <th>City:</th>
+                    <td th:text="${student.city}"></td>
+                </tr>
+                <tr th:each="student : ${students}">
+                    <th>Hobbies:</th>
+                    <td th:text="${student.hobbies}"></td>
+                     <img th:src="${student.avatar}" width="50px" height="50px">
+                     
+               <!-- </tr>
+            			<tr th:each="student : ${students}">
+                    <th>avatar:</th>
+                    <td th:text="${student.avatar}"></td>
+                </tr> --> 
+            			
+               
+               
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+   
+</head>
+<body>
+    <header style="background-color: blue;"><a id="logo"href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin" title="SCOPE INDIA - Software and Networking Professional Education Center"><img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50"></a></header>
+    <div class="container">
+        <h1 class="text-warning text-center">Registration Form</h1>
+        <h2 class="text-danger text-center">It's just a matter of 80 days to an IT job!</h2>
+        <form id="registrationForm" enctype="multipart/form-data">
+            <div class="card" style="width:45%;display:inline-block">
+                <div class="card-body" style="width:100%;">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date Of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob">
+            </div>
+            <div class="form-group">
+                <label>Gender</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="gendermale" value="Male" required>
+                    <label class="form-check-label" for="gendermale">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderfemale" value="Female" required>
+                    <label class="form-check-label" for="genderfemale">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="genderother" value="Other" required>
+                    <label class="form-check-label" for="genderother">Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone">
+            </div>
+        </div>
+    </div>
+            <div class="card " style="width:50% ; display: inline-block;margin-left: 40px;">
+                <div class="card-body" style="width:100%">
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select class="form-control" id="country" name="country">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Canada">Canada</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select class="form-control" id="state" name="state">
+                    <option value="Kerala">Kerala</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <select class="form-control" id="city" name="city">
+                    <option value="Nagercoil">Nagercoil</option>
+                    <option value="Marthadam">Marthadam</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Hobbies</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="hobby1" value="Reading" name="hobbies">
+                    <label class="form-check-label" for="hobby1">Reading</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="hobby2" value="Traveling" name="hobbies">
+                    <label class="form-check-label" for="hobby2">Traveling</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="hobby3" value="Sports" name="hobbies">
+                    <label class="form-check-label" for="hobby3">Sports</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="avatar">Avatar</label>
+                <input type="file" class="form-control-file" id="avatar" name="image" required><br><br>
+                <div class="text-center">
+                <button type="submit" class="btn btn-success btn btn-center">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+        </form>
+    </div>
+    
+</body>
+</html>
+ChatGPT
+Your HTML code for the registration form is well-structured and uses Bootstrap for styling. Here are a few suggestions for improvement and ensuring best practices:
+
+Accessibility: Add aria-label attributes for better accessibility.
+Form validation: Use HTML5 form validation features.
+CSS and JavaScript: Ensure your CSS and JavaScript files are correctly linked and loaded.
+Here’s a revised version of your code with these considerations:
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body>
+    <
+Sure, I'll explain your HTML code line by line.
+
+html
+Copy code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body>
+<!DOCTYPE html>: Declares the document type and version of HTML (HTML5).
+<html lang="en">: Starts the HTML document and sets the language to English.
+<head>: Contains metadata and links to external resources.
+<meta charset="UTF-8">: Sets the character encoding to UTF-8.
+<meta name="viewport" content="width=device-width, initial-scale=1.0">: Ensures proper rendering and touch zooming on mobile devices.
+<title>Document</title>: Sets the title of the webpage displayed in the browser tab.
+<link rel="stylesheet" href="css/bootstrap.css">: Links to the Bootstrap CSS file for styling.
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>: Includes the Popper.js library, required for Bootstrap tooltips, popovers, and more.
+<script src="/js/bootstrap.js"></script>: Links to the local Bootstrap JavaScript file for interactive components.
+html
+Copy code
+<header style="background-color: blue;">
+    <a id="logo" href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin" title="SCOPE INDIA - Software and Networking Professional Education Center">
+        <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50">
+    </a>
+</header>
+<header style="background-color: blue;">: Defines the header section with a blue background.
+<a id="logo" href="https://scopeindia.org/software-networking-testing-cloud-training-kerala-trivandrum-kochin" title="SCOPE INDIA - Software and Networking Professional Education Center">: Creates a link to the SCOPE INDIA website with an ID of "logo" and a tooltip title.
+<img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50">: Displays the SCOPE INDIA logo image with specified source, alt text, and width.
+html
+Copy code
+<div class="container">
+    <h1 class="text-warning text-center">Registration Form</h1>
+    <h2 class="text-danger text-center">It's just a matter of 80 days to an IT job!</h2>
+    <form id="registrationForm" enctype="multipart/form-data">
+        <div class="card" style="width:45%;display:inline-block">
+            <div class="card-body" style="width:100%;">
+<div class="container">: Creates a Bootstrap container for responsive fixed-width content.
+<h1 class="text-warning text-center">Registration Form</h1>: Displays a heading with "Registration Form", styled in warning color and centered.
+<h2 class="text-danger text-center">It's just a matter of 80 days to an IT job!</h2>: Displays a subheading with the given text, styled in danger color and centered.
+<form id="registrationForm" enctype="multipart/form-data">: Starts a form with an ID of "registrationForm" and sets encoding type for file uploads.
+<div class="card" style="width:45%;display:inline-block">: Creates a Bootstrap card with specified width and display style.
+<div class="card-body" style="width:100%;">: Creates a card body with 100% width.
+html
+Copy code
+<div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" class="form-control" id="firstname" name="firstname">
+</div>
+<div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="lastname" name="lastname">
+</div>
+<div class="form-group">
+    <label for="dob">Date Of Birth</label>
+    <input type="date" class="form-control" id="dob" name="dob">
+</div>
+<div class="form-group">
+    <label>Gender</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="gendermale" value="Male" required>
+        <label class="form-check-label" for="gendermale">Male</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="genderfemale" value="Female" required>
+        <label class="form-check-label" for="genderfemale">Female</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="gender" id="genderother" value="Other" required>
+        <label class="form-check-label" for="genderother">Other</label>
+    </div>
+</div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" name="email">
+</div>
+<div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" class="form-control" id="phone" name="phone">
+</div>
+Creates form groups with labels and input fields for:
+First Name
+Last Name
+Date of Birth (date input type)
+Gender (radio buttons with required attribute)
+Email (email input type)
+Phone Number (telephone input type)
+html
+Copy code
+</div>
+</div>
+<div class="card" style="width:50%; display: inline-block; margin-left: 40px;">
+    <div class="card-body" style="width:100%">
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select class="form-control" id="country" name="country">
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <select class="form-control" id="state" name="state">
+                <option value="Kerala">Kerala</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <select class="form-control" id="city" name="city">
+                <option value="Nagercoil">Nagercoil</option>
+                <option value="Marthadam">Marthadam</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Hobbies</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="hobby1" value="Reading" name="hobbies">
+                <label class="form-check-label" for="hobby1">Reading</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="hobby2" value="Traveling" name="hobbies">
+                <label class="form-check-label" for="hobby2">Traveling</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="hobby3" value="Sports" name="hobbies">
+                <label class="form-check-label" for="hobby3">Sports</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="avatar">Avatar</label>
+            <input type="file" class="form-control-file" id="avatar" name="avatar" required><br><br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success btn btn-center">Register</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

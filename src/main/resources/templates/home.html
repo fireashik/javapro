@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <style>
+        .header {
+            background-color: #00003f;
+        }
+        .header a {
+            text-decoration: none;
+            color: white;
+        }
+        .regborder{
+                    border: 1px solid white outset;
+                    box-shadow: 0 0 15px 5px rgba(255, 165, 0, 0.3);
+                    box-shadow: inset;
+                    padding: 3px;
+                    background-color: rgba(255, 102, 0, 0.603);
+                    font-weight: 600;
+                    border-radius: 10%;
+                    
+
+        }
+        .display {
+            background-image: url("/img/slider_bg.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 550px; 
+            width: 100%; 
+            z-index: -1;
+        }
+        .scope{
+            position: relative;
+            margin-top: 200px;
+            
+        }
+        .mess{
+        	z-index:1;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header p-3 d-flex align-items-center">
+        <div class="d-flex flex-grow-1">
+            <a href="#" class="text-white me-3">Home</a>
+            <a href="@{/course}" class="text-white me-3">Courses</a>
+            <a th:href="@{contact}" class="text-white me-3">Contact</a>
+        </div >
+        <div class="d-flex flex-grow-1">
+        <a id="logo" href="" class="me-" title="SCOPE INDIA - Software and Networking Professional Education Center">
+            <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" width="40">
+        </a>
+         
+        </div>
+       
+        <div class="d-flex">
+            <a th:href="@{/loogin}" class="text-white me-3 regborder">Register Now</a>
+            <a href="#" class="text-white me-3">Dashboard</a>
+            <a th:href="@{/loogin}" class="text-white me-3">Login</a>
+            <a href="#" class="text-white">Logout</a>
+             <div class="alert alert-danger mx-2 d-flex" th:if="${course}" th:text="${course}"></div>
+        </div>
+                 
+    </header>
+    <div class="d-flex">
+    
+        <div class="display"> <img class="mx-auto d-block scope" th:src="@{\img\scope-india-logo-home-page (1).png}" width="490px" height="250px"></div>
+        
+           
+           
+       </div>
+      
+    <div class="container">
+       
+        
+    </div>
+</body>
+</html>

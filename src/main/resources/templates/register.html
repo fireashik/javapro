@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        @keyframes bird {
+            0% {
+                margin-left: 10vw;
+            }
+            100% {
+                margin-left: 90vw;
+            }
+        }
+        body {
+            background-image: url("/img/snowpark-skis-headerbg2.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+        }
+        .form-group label, .form-check-label {
+            font-weight: bold;
+            color: white;
+        }
+        .form-control, .form-control-file, .form-check-input, .btn {
+            font-weight: bold;
+            color: red;
+        }
+        .fly {
+            flex: 50px;
+            animation: bird 5s infinite;
+            animation-fill-mode: forwards;
+            animation-play-state: running;
+        }
+    </style>
+</head>
+<div class="container">
+<body class="fw-bold e">
+    <header style="background-color:#00003f;">
+        <a id="logo" href="" title="SCOPE INDIA - Software and Networking Professional Education Center">
+            <img src="https://scopeindia.org/images/scope-india-logo-bird.png" alt="SCOPE INDIA" class="mx-auto d-block" width="50">
+        </a>
+    </header>
+    
+        <h1 class="text-warning text-center">Registration Form</h1>
+        <h2 class="text-danger text-center">It's just a matter of 80 days to an IT job!</h2>
+        <img class="fly" th:src="@{/img/ezgif-1-a5daea19f5.gif}" alt="not displayed" width="55px" style="position:relative; margin-left:30px; margin-top: 10px;">
+        <form id="registrationForm" class="mt-0" th:action="@{/send}" th:object="${form}" enctype="multipart/form-data">
+            <div class="card opacity-50" style="width:45%;display:inline-block">
+                <div class="card-body" style="width:100%;">
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="firstname" th:field="*{firstname}">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" th:field="*{lastname}">
+                    </div>
+                    <div class="form-group">
+                        <label for="dob">Date Of Birth</label>
+                        <input type="date" class="form-control" id="dob" th:field="*{dob}">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" th:field="*{gender}" id="gendermale" value="Male" required>
+                            <label class="form-check-label" for="gendermale">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" th:field="*{gender}" id="genderfemale" value="Female" required>
+                            <label class="form-check-label" for="genderfemale">Female</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" th:field="*{gender}" id="genderother" value="Other" required>
+                            <label class="form-check-label" for="genderother">Other</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" th:field="*{email}">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" th:field="*{phone}">
+                    </div>
+                </div>
+            </div>
+            <div class="card opacity-50" style="display: inline-block; margin-left: 40px; width:45%; position: absolute;">
+                <div class="card-body" style="width:100%; position: relative; bottom: 30px;">
+                    <div class="form-group" style="margin-top:32px;">
+                        <label for="country">Country</label>
+                        <select class="form-control" id="country" th:field="*{country}">
+                           <option value="0">Select country</option>
+                <option th:each="country:${countryModel}" th:text="${country.countryname}" th:value="${country. countryid}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <select class="form-control" id="state" th:field="*{state}">
+                            <option value="0">select state</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <select class="form-control" id="city" th:field="*{city}">
+                            <option value="0"> select city</option>
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Hobbies</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="hobby1" value="Reading" th:field="*{hobbies}">
+                            <label class="form-check-label" for="hobby1">Reading</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="hobby2" value="Traveling" th:field="*{hobbies}">
+                            <label class="form-check-label" for="hobby2">Traveling</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="hobby3" value="Sports" th:field="*{hobbies}">
+                            <label class="form-check-label" for="hobby3">Sports</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="avatar">Avatar</label>
+                        <input type="file" class="form-control-file" id="avatar" th:field="*{avatar}"><br><br>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success w-100">Register</button>
+                        </div>
+                    </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+$(document).ready(function(){
+	$('#country').change(function(){
+		 var countryid = $(this).val();
+		$.ajax({
+			url:'/states/'+countryid,
+			type:'GET',
+			success:function(data){
+				var stat=$("#state")
+				stat.empty();
+				stat.append('<option value=""disable selected>Select Your state</option>')
+				$.each(data,function(index,state){
+					stat.append('<option value="'+state.stateid+'">'+state.statename+'</option>');
+				})
+			}
+		})
+	})
+})
+	$(document).ready(function(){
+    $('#state').change(function(){
+        var stateid = $(this).val();
+        $.ajax({
+            url:'/cities/'+stateid,
+            type:'GET',
+            success:function(data){
+                var stat = $("#city");
+                stat.empty();
+                stat.append('<option value="" disabled selected>Select your city</option>');
+                $.each(data, function(index, city){
+                    stat.append('<option value="'+city.cityid+'">'+city.cityname+'</option>');
+                });
+            }
+        });
+    });
+});
+
+</script>
+</html>
